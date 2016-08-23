@@ -1,0 +1,3 @@
+[submodule "vendor/cpr"]
+	path = vendor/cpr
+	url = https://github.com/whoshuu/cpr
