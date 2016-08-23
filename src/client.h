@@ -36,9 +36,15 @@ class ESClient
 {
 public:
     ESClient(std::string url);
+    Results search(std::string index, std::string doc_type, Json::Value body);
     Results search(std::string index, std::string doc_type, Search body);
     Results search(std::string index, Search body);
     Results search(Search body);
+    void create(std::string index, std::string doc_type, Json::Value body);
+    void create(std::string index, std::string doc_type, std::string id, Json::Value body);
+    void deleteDocument(std::string index, std::string doc_type, std::string id);
+    void deleteDocument(std::string index, std::string doc_type, std::string id, std::string routing);
+
 private:
     std::string m_url;
 };

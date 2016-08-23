@@ -24,10 +24,11 @@ int main(int argc, char *argv[])
 * Query types: bool, match, match_all, term, query_string, simple_query_string
 * Sorting
 * Pagination
+* Create, update, delete documents
 
 ### TODO
 * Other query types (e.g. regex)
 * Aggregations
-
-
+* MultiGET
+* CRUD of the index itself
 
