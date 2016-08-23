@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 * Sorting
 * Pagination
 
-## TODO
+### TODO
 * Other query types (e.g. regex)
 * Aggregations
 
