@@ -44,6 +44,9 @@ public:
     void create(std::string index, std::string doc_type, std::string id, Json::Value body);
     void deleteDocument(std::string index, std::string doc_type, std::string id);
     void deleteDocument(std::string index, std::string doc_type, std::string id, std::string routing);
+    Result get(std::string index, std::string doc_type, std::string id);
+    Result get(std::string index, std::string doc_type, std::string id, std::string routing);
+
 
 private:
     std::string m_url;

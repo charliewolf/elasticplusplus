@@ -80,3 +80,27 @@ void ESClient::deleteDocument(std::string index, std::string doc_type, std::stri
         throw SearchException(request.status_code, request.text);
     }
 }
+Result ESClient::get(std::string index, std::string doc_type, std::string id)
+{
+   return get(index, doc_type, id, "");
+}
+Result ESClient::get(std::string index, std::string doc_type, std::string id, std::string routing)
+{
+    cpr::Url url;
+    if (routing.empty()) {
+        url = cpr::Url{m_url + "/" + index + "/" + doc_type  + "/" + id };
+    } else{
+        url = cpr::Url{m_url + "/" + index + "/" + doc_type  + "/" + id + "?routing=" + routing};
+    }
+    cpr::Response request = cpr::Get(url);
+    if (request.status_code >= 400) {
+        throw SearchException(request.status_code, request.text);
+    }
+    Json::Value root;
+    Json::Reader reader;
+    if (!reader.parse(request.text, root)) {
+        throw SearchException(-1, request.text);
+    } else {
+        return Result(root);
+    }
+}
