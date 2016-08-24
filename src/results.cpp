@@ -15,6 +15,10 @@ int Results::count()
     return m_body["hits"]["total"].asUInt();
 }
 
+Json::Value Results::raw(){
+    return m_body;
+}
+
 std::vector<Result> Results::hits()
 {
     return m_hits;

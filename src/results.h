@@ -23,6 +23,7 @@ public:
     Results(const Json::Value body);
     int count();
     std::vector<Result> hits();
+    Json::Value raw();
 private:
     Json::Value m_body;
     std::vector<Result> m_hits;

@@ -27,8 +27,8 @@ int main(int argc, char *argv[])
 * Create, update, delete documents
 
 ### TODO
-* Other query types (e.g. regex)
-* Aggregations
+* Other query types (e.g. regex) (Note: You can still user aggregates and unsupported query types using the raw JSON query functions)
+* Aggregations (Note: You can still user aggregates and unsupported query types using the raw JSON query functions)
 * MultiGET
 * CRUD of the index itself
 
